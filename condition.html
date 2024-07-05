@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="result"></h2>
+    <button onclick="view('add')">Addition</button>
+    <button onclick="view('sub')">Substraction</button>
+    <button onclick="view('mul')">Multiplication</button>
+    <button onclick="view('div')">Division</button>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <script>
+        function view(x) {
+            let c = ''
+            console.log(x);
+            let a = parseFloat(document.getElementById('num1').value)
+            let b = parseFloat(document.getElementById('num2').value)
+            if (!a || !b) {
+                alert('Please Enter a Value')
+            }
+            else {
+
+                switch (x) {
+                    case 'add':
+                        console.log('Adding');
+                        c = a + b
+                        break;
+
+                    case 'sub':
+                        console.log('Substracting');
+                        c = a - b
+                        break;
+
+                    case 'mul':
+                        console.log('Multiplying');
+                        c = a * b
+                        break;
+
+                    case 'div':
+                        console.log('Dividing');
+                        c = a / b
+                }
+
+                // if (x=='add'){
+                //     c=a+b
+                // }
+                // else if(x=='sub'){
+                //     c=a-b
+                // }
+                // else if(x=='mul'){
+                //     c=a*b
+                // }
+                // else if(x=='div'){
+                //     c=a/b
+                // }
+            }
+            document.getElementById('result').innerHTML = c
+        }
+    </script>
+</body>
+
+</html>
